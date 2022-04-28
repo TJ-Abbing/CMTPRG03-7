@@ -5,7 +5,7 @@ async function loadPokemonData(){
         const result = await fetch ('https://pokeapi.co/api/v2/pokemon?limit=3')
         const data = await result.json();
         data.results.map((pokemon) => {
-            console.log(pokemon.name)
+            console.log(`Name: ${pokemon.name} \n Url ${pokemon.url} \n`)
         })
     } catch (error) {
         console.log('error', error);
