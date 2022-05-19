@@ -1,20 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
+import React, { Fragment, useState } from 'react'
 import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 
 export default function App() {
+  const initialCounterValue = 0
+  const [counter, setCount] = useState(initialCounterValue)
+
   return (
     <View style={styles.container}>
-      <Text style={{fontSize : 100}}>Counter</Text>
+      <Text style={{fontSize : 100}}>{counter}</Text>
       <StatusBar style="auto" />
 
       <View style={styles.fixToText}>
         <Button
           title="-"
-          onPress={() => Alert.alert('Subtracted 1')}
+          onPress={() => setCount(counter - 1)}
         />
         <Button
           title="+"
-          onPress={() => Alert.alert('Added 1')}
+          onPress={() => setCount(counter + 1)}
         />
       </View>
           <Button
