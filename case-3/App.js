@@ -8,7 +8,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={{fontSize : 100}}>{counter}</Text>
+      <Text style={{fontSize : 100}}>{counter || initialCounterValue}</Text>
       <StatusBar style="auto" />
 
       <View style={styles.fixToText}>
@@ -23,7 +23,7 @@ export default function App() {
       </View>
           <Button
           title="Reset"
-          onPress={() => Alert.alert('Counter reset')}
+          onPress={() => setCount(counter === initialCounterValue)}
         />
     </View>
   );
