@@ -7,10 +7,20 @@ export default function App() {
       <Text style={{fontSize : 100}}>Counter</Text>
       <StatusBar style="auto" />
 
-      <Button
-        title="Press me"
-        onPress={() => Alert.alert('Button pressed')}
-      />
+      <View style={styles.fixToText}>
+        <Button
+          title="-"
+          onPress={() => Alert.alert('Subtracted 1')}
+        />
+        <Button
+          title="+"
+          onPress={() => Alert.alert('Added 1')}
+        />
+      </View>
+          <Button
+          title="Reset"
+          onPress={() => Alert.alert('Counter reset')}
+        />
     </View>
   );
 }
@@ -22,4 +32,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
+  fixToText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  }
 });
